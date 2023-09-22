@@ -2,7 +2,7 @@
 
 Provides shared code for writing command-line tools.
 
-Combines [prantlf.cargs], [prantlf.config] and [prantlf.dotennv] in a typical way how command--line tools with a configuration file a command-line and with environment variables are initialised.
+Combines [prantlf.cargs], [prantlf.config] and [prantlf.dotenv] in a typical way how command-line tools with a configuration file a command-line and with environment variables are initialised.
 
 ## Synopsis
 
