@@ -4,5 +4,8 @@
     "**/.DS_Store": true,
     "**/*_test": true,
     "**/*.dSYM": true
+  },
+  "search.exclude": {
+    "**/src/testout": true
   }
 }

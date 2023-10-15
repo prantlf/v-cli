@@ -4,6 +4,6 @@ Module {
 	version: '0.0.1'
 	license: 'MIT'
 	dependencies: [
-		'prantlf.cargs', 'prantlf.config', 'prantlf.dotenv'
+		'prantlf.cargs', 'prantlf.config', 'prantlf.dotenv', 'prantlf.strutil'
 	]
 }
