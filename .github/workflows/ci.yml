@@ -53,6 +53,7 @@ jobs:
         git clone --depth=1 --recursive --shallow-submodules https://github.com/prantlf/v-ini src\modules\prantlf\ini
         git clone --depth=1 --recursive --shallow-submodules https://github.com/prantlf/v-jany src\modules\prantlf\jany
         git clone --depth=1 --recursive --shallow-submodules https://github.com/prantlf/v-json src\modules\prantlf\json
+        git clone --depth=1 --recursive --shallow-submodules https://github.com/prantlf/v-osutil src\modules\prantlf\osutil
         git clone --depth=1 --recursive --shallow-submodules https://github.com/prantlf/v-path src\modules\prantlf\path
         git clone --depth=1 --recursive --shallow-submodules https://github.com/prantlf/v-pcre src\modules\prantlf\pcre
         git clone --depth=1 --recursive --shallow-submodules https://github.com/prantlf/v-strutil src\modules\prantlf\strutil
