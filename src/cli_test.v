@@ -4,9 +4,9 @@ pub struct Opts {}
 
 fn test_initialize() {
 	cfg := Cli{
-		usage: '-c|--config <name> file name or path of the config file'
-		version: '0.0.1'
-		cfg_opt: 'c'
+		usage:            '-c|--config <name> file name or path of the config file'
+		version:          '0.0.1'
+		cfg_opt:          'c'
 		options_anywhere: true
 	}
 	opts, args := initialize[Opts](cfg)!

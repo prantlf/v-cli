@@ -33,7 +33,7 @@ pub fn initialize[T](cfg &Cli) !(&T, []string) {
 	}
 	scanned := scan(cfg.usage, &Input(cfg))!
 	mut opts := T{}
-	if cfg.cfg_opt.len > 0 {
+	if cfg.cfg_opt != '' {
 		config_name := get_val(scanned, cfg.cfg_opt, cfg.cfg_file)!
 		if config_name.contains_u8(`/`) || config_name.contains_u8(`\\`) {
 			read_config_to(config_name, mut opts)!
@@ -46,7 +46,7 @@ pub fn initialize[T](cfg &Cli) !(&T, []string) {
 			}
 		}
 	}
-	if cfg.cfg_gen_opt.len > 0 {
+	if cfg.cfg_gen_opt != '' {
 		mut config_name := if needs_val(scanned, cfg.cfg_gen_opt)! {
 			get_val(scanned, cfg.cfg_gen_opt, '')!
 		} else {
@@ -56,12 +56,12 @@ pub fn initialize[T](cfg &Cli) !(&T, []string) {
 				''
 			}
 		}
-		if config_name.len > 0 {
+		if config_name != '' {
 			gen_cfg(cfg, opts, config_name)!
 		}
 	}
 	args := parse_scanned_to(scanned, &Input(cfg), mut opts)!
-	if cfg.cfg_gen_arg.len > 0 && args.len > 0 && args[0] == cfg.cfg_gen_arg {
+	if cfg.cfg_gen_arg != '' && args.len > 0 && args[0] == cfg.cfg_gen_arg {
 		gen_cfg(cfg, opts, cfg.cfg_file)!
 	}
 	return &opts, args
@@ -69,7 +69,7 @@ pub fn initialize[T](cfg &Cli) !(&T, []string) {
 
 fn gen_cfg[T](cfg &Cli, opts &T, config_name string) ! {
 	config_file := if !contains_u8_within(config_name, `.`, 1, -1) {
-		ext := if cfg.cfg_gen_ext.len > 0 {
+		ext := if cfg.cfg_gen_ext != '' {
 			cfg.cfg_gen_ext
 		} else {
 			'.ini'
